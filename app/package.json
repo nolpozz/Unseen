@@ -1,0 +1,34 @@
+{
+  "name": "unseen-app",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "test": "npx ts-node app/utils/testRunner.ts",
+    "test:demo": "npx ts-node app/utils/demoData.ts",
+    "test:validate": "npx ts-node app/utils/testUtils.ts",
+    "lint": "npx eslint . --ext .ts,.tsx",
+    "type-check": "npx tsc --noEmit",
+    "build:check": "npm run lint && npm run type-check && npm run test"
+  },
+  "dependencies": {
+    "expo": "~49.0.0",
+    "react": "18.2.0",
+    "react-native": "0.72.6",
+    "@react-navigation/native": "^6.1.9",
+    "@react-navigation/stack": "^6.3.20",
+    "@react-navigation/bottom-tabs": "^6.5.11",
+    "firebase": "^10.7.1",
+    "expo-status-bar": "~1.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@types/react": "~18.2.14",
+    "@types/react-native": "~0.72.2",
+    "typescript": "^5.1.3"
+  },
+  "private": true
+} 

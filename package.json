@@ -1,0 +1,9 @@
+{
+  "name": "unseen",
+  "private": true,
+  "workspaces": ["app", "backend"],
+  "scripts": {
+    "start:app": "cd app && expo start",
+    "start:backend": "cd backend && npm run start"
+  }
+} 
