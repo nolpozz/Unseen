@@ -1,9 +1,35 @@
 {
-  "name": "unseen",
-  "private": true,
-  "workspaces": ["app", "backend"],
+  "name": "unseen-web",
+  "version": "1.0.0",
+  "description": "Unseen AI-Powered Art Experience Platform - Web Version",
+  "main": "server/index.js",
   "scripts": {
-    "start:app": "cd app && expo start",
-    "start:backend": "cd backend && npm run start"
-  }
-} 
+    "demo": "node demo.js",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm start",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "cd server && npm run dev",
+    "client:dev": "cd client && npm run dev",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "setup": "npm run install:all",
+    "clean": "npm run clean:node_modules && npm run clean:build",
+    "clean:node_modules": "rimraf node_modules server/node_modules client/node_modules",
+    "clean:build": "rimraf client/dist",
+    "reset": "npm run clean && npm run setup"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "rimraf": "^5.0.10"
+  },
+  "keywords": [
+    "ai",
+    "art",
+    "qr-code",
+    "marketplace",
+    "platform",
+    "web"
+  ],
+  "author": "Nolan",
+  "license": "MIT"
+}
